@@ -3,7 +3,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { assert } from 'console';
 
 test.describe('Login Tests', () => {
-    test.only('Successful login with valid credentials', async({page}) => {
+    test('Successful login with valid credentials', async({page}) => {
         const loginPage = new LoginPage(page);
         await loginPage.gotoLoginPage();
 
