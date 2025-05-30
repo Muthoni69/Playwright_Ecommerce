@@ -16,9 +16,10 @@ test.describe('Product Filters', () => {
 
     test('can filter by Brand', async ({ page }) => {
         const productsPage = new ProductsPage(page);
+    
         await productsPage.navigateToProducts();
 
-        await expect(this.page.getByText(/Logged in as X/)).toBeVisible();
+        await expect(this.page.getByText('Logged in as X')).toBeVisible();
 
         await productsPage.clickPoloBrand();
 
