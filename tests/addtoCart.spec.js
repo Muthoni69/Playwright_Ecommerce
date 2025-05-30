@@ -15,12 +15,16 @@ test.describe('Adding To Cart Process', () => {
 
         await expect(page).toHaveURL("https://automationexercise.com/view_cart");
 
+        console.log("Items added to cart!");
+
     })
 
     test('can remove item from cart', async ({ page }) => {
         const addingCart = new AddToCartPage(page);
 
         await addingCart.removeFirstItemFromCart();
+
+        console.log("Items removed from cart!");
 
     })
 
@@ -30,6 +34,8 @@ test.describe('Adding To Cart Process', () => {
         await addingCart.proceedToCheckout();
 
         await expect(page).toHaveURL("https://automationexercise.com/checkout");
+
+        console.log("Could proceed to checout!");
     })
 
     test('can pay for order', async ({ page }) => {
@@ -37,6 +43,6 @@ test.describe('Adding To Cart Process', () => {
 
         await addingCart.paymentForOrder("X", "111 222 333 444", "111", "05", "2026");
 
-
+        console.log("Customer can pay for order!");
     })
 })

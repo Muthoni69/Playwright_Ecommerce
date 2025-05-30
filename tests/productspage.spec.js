@@ -19,7 +19,7 @@ test.describe('Product Filters', () => {
     
         await productsPage.navigateToProducts();
 
-        await expect(this.page.getByText('Logged in as X')).toBeVisible();
+        await expect(page.getByText('Logged in as X')).toBeVisible();
 
         await productsPage.clickPoloBrand();
 
