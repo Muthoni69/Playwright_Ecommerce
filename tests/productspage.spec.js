@@ -50,6 +50,15 @@ test.describe('Product Filters', () => {
         console.log("Performed successful search!")
     })
 
+    test('Sales AD on', async({page}) => {
+        const productsPage = new ProductsPage(page);
+        await productsPage.navigateToProducts();
+
+        await expect(page.locator('id=sale_image')).toBeVisible();
+
+        console.log("Sale is still on!!")
+    })
+
 });
 
 
